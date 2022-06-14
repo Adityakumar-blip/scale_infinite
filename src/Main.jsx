@@ -97,6 +97,9 @@ const Main = () => {
     <div className="chart-container">
         <div className="line-chart-heading">
         <h2 style={{textAlign:'center'}}>Line Chart</h2>
+        <div className="heading" style={{display:'flex', flexDirection:'column', justifyContent:"center", alignItems:'center', marginBottom:'2rem'}}>
+        <p>If screen doesn't display any data, please click the button</p><a href='https://cors-anywhere.herokuapp.com/corsdemo'><button>click here</button></a>
+        </div>
             <div className="line-chart">
             <Line
         data={data}

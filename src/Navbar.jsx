@@ -12,7 +12,7 @@ const Navbar = () => {
   <div className="collapse navbar-collapse mr-4" id="navbarSupportedContent">
     <ul className="navbar-nav ml-auto">
       <li className="nav-item">
-        <Link className="nav-link" to="/coding">Coding<span class="sr-only">(current)</span></Link>
+        <Link className="nav-link" to="/">Coding</Link>
       </li>
       <li className="nav-item">
         <Link className="nav-link" to="/design">Design</Link>

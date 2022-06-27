@@ -1,0 +1,38 @@
+.pagination{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 30px 1rem;
+}
+
+.activpage{
+    padding: 0.5rem;
+}
+
+.dispage{
+    padding: 1rem;
+}
+
+.prevpage{
+    border: 1px solid grey;
+    text-decoration: none;
+    color: black;
+    padding: 1rem;
+}
+
+.nexpage{
+    border: 1px solid grey;
+    text-decoration: none;
+    color: black;
+    padding: 1rem;
+}
+
+.prevpage:hover{
+    color: rgb(39, 39, 39);
+    text-decoration: none;
+}
+
+.nexpage:hover{
+    color: rgb(39, 39, 39);
+    text-decoration: none;
+}

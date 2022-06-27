@@ -1,7 +1,17 @@
 import React from 'react'
-import { Link } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
+
+import {AiOutlineLogout} from 'react-icons/ai'
 
 const Navbar = () => {
+
+  const history = useNavigate();
+
+  
+  const userlogout = ()=>{
+    localStorage.removeItem("user_login")
+    history("/");
+}
   return (
     <nav className="navbar navbar-expand-lg navbar-light bg-light">
   <a className="navbar-brand" href="#">Assignment</a>
@@ -12,10 +22,16 @@ const Navbar = () => {
   <div className="collapse navbar-collapse mr-4" id="navbarSupportedContent">
     <ul className="navbar-nav ml-auto">
       <li className="nav-item">
-        <Link className="nav-link" to="/">Coding</Link>
+        <Link className="nav-link" to="/master">Home</Link>
       </li>
       <li className="nav-item">
-        <Link className="nav-link" to="/design">Design</Link>
+        <Link className="nav-link" to="/profile">Profile</Link>
+      </li>
+      <li className="nav-item">
+        <Link className="nav-link" to="/contact">Contact us</Link>
+      </li>
+      <li className="nav-item" onClick={userlogout}>
+        <Link className="nav-link" to="/design"><AiOutlineLogout className='logicon'/></Link>
       </li>
     </ul>
   </div>

@@ -1,4 +1,6 @@
 import React,{useState, useEffect} from 'react'
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 import './Contact.css'
 import Footer from './Footer'
@@ -7,6 +9,8 @@ import Navbar from './Navbar'
 const Contact = () => {
 
     const [logindata, setLoginData] = useState([]);
+    const [message, setmessage] = useState("");
+    const [contact, setcontact] = useState('');
 
     const Userdata = () => {
       const getuser = localStorage.getItem('user_login');
@@ -20,6 +24,14 @@ const Contact = () => {
     useEffect(() => {
         Userdata();
     }, [])
+
+    const handleSubmit = (e) => {
+        e.preventDefault();
+        localStorage.setItem('contact', contact)
+        localStorage.setItem("message", message)
+        alert('success')
+        
+    }
   return (
     <>
     <Navbar/>
@@ -52,14 +64,14 @@ const Contact = () => {
                 }
             </div>
             <div class="app-form-group">
-              <input class="app-form-control" placeholder="CONTACT NO"/>
+              <input class="app-form-control" placeholder="CONTACT NO" value={contact} onChange={(e) => setcontact(e.target.value)}/>
             </div>
             <div class="app-form-group message">
-              <input class="app-form-control" placeholder="MESSAGE"/>
+              <input class="app-form-control" placeholder="MESSAGE" value={message} onChange={(e) => setmessage(e.target.value)}/>
             </div>
             <div class="app-form-group buttons">
               {/* <button class="app-form-button">CANCEL</button> */}
-              <button class="app-form-button">SEND</button>
+              <button class="app-form-button" onClick={handleSubmit}>SEND</button>
             </div>
           </div>
         </div>

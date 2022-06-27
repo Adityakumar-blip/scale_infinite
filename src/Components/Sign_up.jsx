@@ -4,6 +4,8 @@ import { useNavigate } from 'react-router-dom'
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
+import './Sign_up.css'
+
 const Sign_up = () => {
     const history = useNavigate();
 
@@ -80,7 +82,7 @@ const Sign_up = () => {
         <div class="shape"></div>
         <div class="shape"></div>
     </div>
-    <form>
+    <form className='form-container'>
         <h3>Signup Here</h3>
 
         <label for="name">Name</label>
@@ -95,7 +97,7 @@ const Sign_up = () => {
         <label for="password">Password</label>
         <input type="password" name='password' placeholder="Password" id="password" onChange={getdata}/>
 
-        <button onClick={addData} type="submit">Sign In</button>
+        <button onClick={addData} type="submit">Sign up</button>
         <div class="social">
           <p>Already have an account<span><NavLink to='/login'>SignIn</NavLink></span></p>
         </div>
